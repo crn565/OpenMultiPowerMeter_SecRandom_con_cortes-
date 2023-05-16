@@ -8,11 +8,11 @@ No hay pausa entre secuencias y el tiempo de encendido de cada secuencia es seud
 
 El periodo de entrenamiento,validacion  y test  se hace en la proporcion 60/20/20, es decir: 
 
-- Entrenamiento :de 17:22 a 21:08
+- Training Interval: Start Time: 2023-05-16 09:52:28+01:00 End Time: 2023-05-16 14:45:17+01:00
 
-- Validacion : de 21:08 a 22:35
+- Validation Interval: Start Time: 2023-05-16 14:45:18+01:00 End Time: 2023-05-16 17:15:23+01:00
 
-- Test: de 22:35 a 23:43
+- Test Interval: Start Time: 2023-05-16 17:15:24+01:00 End Time: 2023-05-16 17:56:18+01:00
 
 # Resultados Metricas  con algoritmo CO, metodo Median  y 10"
 
@@ -46,6 +46,18 @@ El periodo de entrenamiento,validacion  y test  se hace en la proporcion 60/20/2
 |EAE|	0.000|	0.000	|0.000|	0.000|	0.000|	0.0000|
 |MNEAP|	0.678	|1.391|	0.342|	1.343|	0.761|	0.9030|
 |RMSE	|11.315|	9.334	|15.782|	8.833|	15.806|	12.2146|
+
+## Datos  en secuencia fija con programador, tiempo de encendido seudoaleatorio entre 10 y 60 segundos Y CORTE DE LOD APLICATIVOS LUZ LED Y LAPTOP
+
+| Metrica          | Fryer   | LED Lamp | Incandescent lamp | Laptop Computer | Fan     | Media Aritmética |
+|-----------------|---------|----------|------------------|----------------|---------|------------------|
+|F1|	0.997|	0.0|	0.993|	0.00|	0.993| 0.794|
+|EAE|	0.000	|0.0|	0.000|	0.001|	0.000|0|
+|MNEAP|	0.019|	inf|	0.020|	409.51|	0.039|102.1175|
+|RMSE|	0.559	|1.0|	1.976|	9.971|	1.477|2.7965|
+
+
+
 
 ## INTERPRETACION DE LOS RESULTADOS
 
