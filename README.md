@@ -63,24 +63,24 @@ El periodo de entrenamiento,validacion  y test  se hace en la proporcion 60/20/2
 
 Las cuatro tablas presentan los resultados de aplicar diferentes métricas en distintos escenarios utilizando la herramienta NILMTK. A continuación, te proporciono una interpretación de cada tabla:
 
-**Tabla 1: Datos anteriores con secuencia fija y tiempo de encendido fijo de 2 minutos
+**Tabla 1: Datos anteriores con secuencia fija y tiempo de encendido fijo de 2 minutos**
 
 - F1: La métrica F1 representa la precisión general del desagregador y varía de 0 a 1. Los valores más cercanos a 1 indican una mayor precisión. En este caso, la precisión varía entre 0.420 (Fryer) y 0.789 (LED Lamp).
 - EAE: La métrica EAE (Error Absoluto Medio) mide la diferencia promedio entre el consumo real y el estimado. Los valores más bajos indican una mejor estimación. En este caso, los valores están en el rango de 0.001 a 0.012.
 - MNEAP: La métrica MNEAP (Error Absoluto Medio Normalizado por Consumo de Energía Promedio) calcula el error promedio normalizado en relación al consumo promedio de energía. Los valores más bajos indican una mejor estimación. En este caso, los valores varían entre 0.349 y 1.150.
 - RMSE: La métrica RMSE (Raíz del Error Cuadrático Medio) representa la raíz cuadrada del promedio de los errores al cuadrado. Valores más bajos indican una mejor estimación. En este caso, los valores oscilan entre 7.339 y 22.688.
 
-**Tabla 2: Datos con muestras aleatorias
+**Tabla 2: Datos con muestras aleatorias**
 
 Esta tabla muestra los resultados de aplicar las métricas en un escenario donde los datos se obtienen con muestras aleatorias.
 Los valores de las métricas son diferentes en comparación con la tabla anterior, lo cual indica que la precisión y el error varían en este caso específico.
 
-**Tabla 3: Datos en secuencia fija con programador y tiempo de encendido seudoaleatorio entre 10 y 60 segundos
+**Tabla 3: Datos en secuencia fija con programador y tiempo de encendido seudoaleatorio entre 10 y 60 segundos**
 
 Esta tabla presenta los resultados de aplicar las métricas en un escenario donde los datos se generan utilizando una secuencia fija con programador y tiempos de encendido seudoaleatorios entre 10 y 60 segundos.
 Los valores de las métricas difieren de los dos escenarios anteriores, lo cual indica que los resultados pueden variar según las condiciones y características específicas de los datos.
 
-**Tabla 4: Datos en secuencia fija con programador, tiempo de encendido seudoaleatorio entre 10 y 60 segundos y corte de red que afecta a LED Lamp y Laptop Computer
+**Tabla 4: Datos en secuencia fija con programador, tiempo de encendido seudoaleatorio entre 10 y 60 segundos y corte de red que afecta a LED Lamp y Laptop Computer**
 
 Esta tabla muestra los resultados de aplicar las métricas en un escenario similar al anterior, pero con la adición de un corte de red que afecta a las lámparas LED y la computadora portátil.
 Los resultados reflejan el impacto del corte de red en la precisión y el error de las estimaciones, como se observa en los valores de la métrica LED Lamp y Laptop Computer.
