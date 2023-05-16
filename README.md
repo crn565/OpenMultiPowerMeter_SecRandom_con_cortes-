@@ -100,7 +100,7 @@ Para determinar cuál es la mejor tabla en este caso, debemos analizar las métr
 
 **Tabla 4**: Datos en secuencia fija con programador, tiempo de encendido seudoaleatorio entre 10 y 60 segundos y corte de red que afecta a LED Lamp y Laptop Computer. Esta tabla presenta los resultados cuando se aplicó el algoritmo CO, método Mediana y un tiempo de muestreo de 10 segundos en datos con una secuencia fija con programador, tiempos de encendido seudoaleatorios y un corte de red que afecta a LED Lamp y Laptop Computer. Las métricas F1 y MNEAP para Fryer y Incandescent lamp tienen valores altos en comparación con las otras tablas. Sin embargo, la métrica MNEAP para Laptop Computer muestra un valor de "inf" (infinito), lo cual indica que el error es extremadamente alto debido al corte de red.
 
-En cuanto a determinar la mejor tabla, debes considerar cuáles son las métricas más importantes para tus objetivos. Si valoras la precisión general, la tabla 4 tiene valores más altos en la métrica F1 para algunos dispositivos. Sin embargo, el corte de red en LED Lamp y Laptop Computer afecta negativamente las métricas en esos dispositivos.
+En cuanto a determinar la mejor tabla, debemo considerar cuáles son las métricas más importantes para nuestros objetivos. Si valoramos la precisión general, la tabla 4 tiene valores más altos en la métrica F1 para algunos dispositivos. Sin embargo, el corte de red en LED Lamp y Laptop Computer afecta negativamente las métricas en esos dispositivos po rlo que quizas deberiamos repetir las medidas.
 
 Si nos preocupa el error absoluto medio (EAE) o el error cuadrático medio (RMSE), la tabla 4 tiene valores más bajos en general.
 
