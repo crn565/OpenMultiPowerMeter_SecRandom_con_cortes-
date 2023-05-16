@@ -61,44 +61,27 @@ El periodo de entrenamiento,validacion  y test  se hace en la proporcion 60/20/2
 
 ## INTERPRETACION DE LOS RESULTADOS
 
-### Solo considerando la matrica F1
+Las cuatro tablas presentan los resultados de aplicar diferentes métricas en distintos escenarios utilizando la herramienta NILMTK. A continuación, te proporciono una interpretación de cada tabla:
 
-El mejor resultado es el que tiene la puntuación F1 más alta, que son los datos secuenciales con secuencia fija y tiempo de encendido fijo. La puntuación F1 es una medida de exactitud que tiene en cuenta tanto la precisión como la recuperación. La precisión es la fracción de casos positivos predichos que son realmente positivos, y la recuperación es la fracción de casos positivos reales que son positivos predichos. Cuanto mayor sea la puntuación F1, más precisa será la predicción.
+Tabla 1: Datos anteriores con secuencia fija y tiempo de encendido fijo de 2 minutos
 
+- F1: La métrica F1 representa la precisión general del desagregador y varía de 0 a 1. Los valores más cercanos a 1 indican una mayor precisión. En este caso, la precisión varía entre 0.420 (Fryer) y 0.789 (LED Lamp).
+- EAE: La métrica EAE (Error Absoluto Medio) mide la diferencia promedio entre el consumo real y el estimado. Los valores más bajos indican una mejor estimación. En este caso, los valores están en el rango de 0.001 a 0.012.
+- MNEAP: La métrica MNEAP (Error Absoluto Medio Normalizado por Consumo de Energía Promedio) calcula el error promedio normalizado en relación al consumo promedio de energía. Los valores más bajos indican una mejor estimación. En este caso, los valores varían entre 0.349 y 1.150.
+- RMSE: La métrica RMSE (Raíz del Error Cuadrático Medio) representa la raíz cuadrada del promedio de los errores al cuadrado. Valores más bajos indican una mejor estimación. En este caso, los valores oscilan entre 7.339 y 22.688.
+- 
+Tabla 2: Datos con muestras aleatorias
 
-Los otros dos resultados no son tan buenos porque tienen puntuaciones F1 más bajas. Los datos con muestras aleatorias tienen una puntuación F1 de 0,485, y los datos de secuencias con muestras aleatorias tienen una puntuación F1 de 0,5846. Estos resultados no son tan buenos como los de los datos de secuencia con secuencia fija porque son menos precisos.
+Esta tabla muestra los resultados de aplicar las métricas en un escenario donde los datos se obtienen con muestras aleatorias.
+Los valores de las métricas son diferentes en comparación con la tabla anterior, lo cual indica que la precisión y el error varían en este caso específico.
 
-La razón por la que los datos de secuencia con secuencia fija son más precisos es que es más fácil predecir el consumo de energía de los electrodomésticos cuando se conoce la secuencia de eventos que ocurrieron en la casa. Por ejemplo, si se sabe que alguien encendió el horno a las 18:00, se puede predecir que el horno consumirá más energía a esa hora. Esto no es posible con los otros dos conjuntos de datos porque no contienen información sobre la secuencia de acontecimientos.
+Tabla 3: Datos en secuencia fija con programador y tiempo de encendido seudoaleatorio entre 10 y 60 segundos
 
-En conclusión, el mejor resultado es el que tiene la puntuación F1 más alta, que son los datos con secuencia fija. Este resultado es más preciso porque tiene en cuenta la secuencia de acontecimientos que ocurrieron en la casa.
+Esta tabla presenta los resultados de aplicar las métricas en un escenario donde los datos se generan utilizando una secuencia fija con programador y tiempos de encendido seudoaleatorios entre 10 y 60 segundos.
+Los valores de las métricas difieren de los dos escenarios anteriores, lo cual indica que los resultados pueden variar según las condiciones y características específicas de los datos.
 
-### Considerando todas la metricas
+Tabla 4: Datos en secuencia fija con programador, tiempo de encendido seudoaleatorio entre 10 y 60 segundos y corte de red que afecta a LED Lamp y Laptop Computer
 
-
-Para determinar cuál de los tres conjuntos de resultados de las métricas NILMTK es el mejor, tenemos que considerar qué métricas son las más importantes para el caso de uso específico.
-
-Si damos prioridad a la puntuación F1, que es una medida de la precisión global del algoritmo NILM, podemos ver que el conjunto de datos de secuencia tiene la puntuación F1 más alta para todos los aparatos excepto para la lámpara LED. Sin embargo, si consideramos todos los aparatos juntos, el conjunto de datos anterior con secuencia fija tiene la puntuación F1 media más alta.
-
-Si priorizamos la métrica RMSE, que mide el error entre el consumo de energía real y el predicho, podemos ver que los datos con muestras aleatorias tienen el RMSE más bajo para todos los aparatos excepto para la Lámpara LED.
-
-Si priorizamos la métrica MNEAP, que mide el error medio normalizado en la potencia de los aparatos, podemos ver que el conjunto de datos anterior con secuencia fija tiene el MNEAP más bajo para todos los aparatos excepto para el Ordenador Portátil.
-
-En general, la elección del mejor conjunto de resultados de la métrica NILMTK dependerá del caso de uso específico y de la prioridad de las distintas métricas.
-
-
-
-###  Resumen
-
-A continuación se muestra una tabla en la que se comparan los resultados de las métricas de NILMTK con los de los tres experimentos:
-
-|Experiment	|Fryer|	LED Lamp|	Incandescent Lamp	|Laptop Computer	|Fan|	Average
-|-----------------|---------|----------|------------------|----------------|---------|------------------|
-Datos anteriores con secuencia fija y tiempo de encendido fijo de 2 minutos	|0.420|	0.789|	0.756|	0.453|	0.741|	0.632|
-Datos con muestras aleatorias|	0.591	|0.158	|0.752	|0.349|	0.577	|0.485 |
-Datos en secuencia fija con programador y tiempo de encendido seudoaleatorio entre 10 y 60 segundos|	0.638	|0.364|	0.858|	0.381|	0.682	|0.5846|
-
-
-Como puede verse, los mejores resultados se obtuvieron con el tercer experimento, en el que los datos se recogieron en una secuencia fija con un tiempo de encendido pseudoaleatorio entre 10 y 60 segundos. Esto se debe probablemente a que este experimento proporcionó los datos más consistentes con los que pudo trabajar el algoritmo NILM. El segundo experimento, en el que los datos se recogieron con muestras aleatorias, produjo los peores resultados. Esto se debe probablemente a que las muestras aleatorias hicieron más difícil para el algoritmo NILM identificar los patrones en los datos. El primer experimento, en el que los datos se recogieron en una secuencia fija con un tiempo de encendido fijo de 2 minutos, produjo resultados intermedios entre el primer y el segundo experimento. Esto se debe probablemente a que el tiempo de encendido fijo proporcionó cierta coherencia a los datos, pero no tanta como el tiempo de encendido pseudoaleatorio del tercer experimento.
-
-En general, los resultados muestran que el algoritmo NILM es más preciso cuando los datos se recogen de forma coherente. Si busca los resultados más precisos, le recomiendo que utilice el tercer experimento, en el que los datos se recogen en una secuencia fija con un tiempo de encendido pseudoaleatorio entre 10 y 60 segundos.
-
+Esta tabla muestra los resultados de aplicar las métricas en un escenario similar al anterior, pero con la adición de un corte de red que afecta a las lámparas LED y la computadora portátil.
+Los resultados reflejan el impacto del corte de red en la precisión y el error de las estimaciones, como se observa en los valores de la métrica LED Lamp y Laptop Computer.
+Además, la métrica MNEAP para Laptop Computer muestra un valor de "inf" (infinito), lo cual indica que el error es extremadamente alto debido al corte de red y el consumo desproporcionado en ese período.
